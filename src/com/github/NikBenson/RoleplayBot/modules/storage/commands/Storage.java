@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Map;
 
-import static com.github.NikBenson.RoleplayBot.modules.storage.Storage.getStorageManager;
+import static com.github.NikBenson.RoleplayBot.modules.storage.StorageModule.getStorageManager;
 
 public class Storage extends Command<ServerContext> {
 	@Override
