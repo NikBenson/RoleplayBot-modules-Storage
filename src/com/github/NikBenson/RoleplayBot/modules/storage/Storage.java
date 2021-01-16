@@ -23,8 +23,6 @@ public class Storage implements RoleplayBotModule {
 
 	@Override
 	public void load(Guild guild) {
-		System.out.printf("activated storage for %s%n", guild.getId());
-
 		if(!managers.containsKey(guild)) {
 			managers.put(guild, new StorageManager(guild));
 		}
