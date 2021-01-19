@@ -93,4 +93,9 @@ public class StorageManager extends ListenerAdapter implements JSONConfigured {
 			storages.put(channel, storage);
 		}
 	}
+
+	@Override
+	public Guild getGuild() {
+		return GUILD;
+	}
 }

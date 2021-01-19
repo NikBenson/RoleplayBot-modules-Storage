@@ -1,8 +1,8 @@
 package com.github.NikBenson.RoleplayBot.modules.storage.commands;
 
 import com.github.NikBenson.RoleplayBot.commands.Command;
-import com.github.NikBenson.RoleplayBot.commands.context.ServerContext;
 import com.github.NikBenson.RoleplayBot.modules.storage.StorageManager;
+import com.github.NikBenson.RoleplayBot.commands.context.GuildMessageContext;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -11,10 +11,10 @@ import java.util.Map;
 
 import static com.github.NikBenson.RoleplayBot.modules.storage.StorageModule.getStorageManager;
 
-public class Storage extends Command<ServerContext> {
+public class Storage extends Command<GuildMessageContext> {
 	@Override
-	public Class<ServerContext> getContext() {
-		return ServerContext.class;
+	public Class<GuildMessageContext> getContext() {
+		return GuildMessageContext.class;
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class Storage extends Command<ServerContext> {
 	}
 
 	@Override
-	public String execute(String command, ServerContext context) {
+	public String execute(String command, GuildMessageContext context) {
 		TextChannel channel = ((MessageReceivedEvent) context.getParams().get("event")).getTextChannel();
 		Guild guild = channel.getGuild();
 		StorageManager storageManager = getStorageManager(guild);
@@ -72,20 +72,20 @@ public class Storage extends Command<ServerContext> {
 
 	private String listContent(TextChannel channel, StorageManager storageManager) {
 		Map<String, Long> storage = storageManager.getStorageFrom(channel);
-		String list = "";
+		StringBuilder list = new StringBuilder();
 
 		for(String item : storage.keySet()) {
 			long count = storage.get(item);
 
-			list += String.format("**%s**: %d\n", item, count);
+			list.append(String.format("**%s**: %d\n", item, count));
 		}
 
 		if(list.length() > 0) {
 			list.substring(0, list.length() - 2);
 		} else {
-			list = "Empty";
+			list = new StringBuilder("Empty");
 		}
 
-		return list;
+		return list.toString();
 	}
 }

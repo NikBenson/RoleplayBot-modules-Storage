@@ -3,6 +3,7 @@ package com.github.NikBenson.RoleplayBot.modules.storage;
 import com.github.NikBenson.RoleplayBot.commands.Command;
 import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
 import com.github.NikBenson.RoleplayBot.modules.RoleplayBotModule;
+import com.github.NikBenson.RoleplayBot.modules.storage.commands.Storage;
 import net.dv8tion.jda.api.entities.Guild;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class StorageModule implements RoleplayBotModule {
 
 	public StorageModule() {
 		instance = this;
-		Command.register(new com.github.NikBenson.RoleplayBot.modules.storage.commands.Storage());
+		Command.register(new Storage());
 	}
 
 	@Override
@@ -51,6 +52,11 @@ public class StorageModule implements RoleplayBotModule {
 			}
 			managers.remove(guild);
 		}
+	}
+
+	@Override
+	public Guild[] getLoaded() {
+		return managers.keySet().toArray(new Guild[0]);
 	}
 
 	public static StorageManager getStorageManager(Guild guild) {
