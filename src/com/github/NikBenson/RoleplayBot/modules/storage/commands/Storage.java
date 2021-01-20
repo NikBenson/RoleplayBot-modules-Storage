@@ -5,7 +5,7 @@ import com.github.NikBenson.RoleplayBot.modules.storage.StorageManager;
 import com.github.NikBenson.RoleplayBot.commands.context.GuildMessageContext;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import java.util.Map;
 
@@ -24,7 +24,7 @@ public class Storage extends Command<GuildMessageContext> {
 
 	@Override
 	public String execute(String command, GuildMessageContext context) {
-		TextChannel channel = ((MessageReceivedEvent) context.getParams().get("event")).getTextChannel();
+		TextChannel channel = ((GuildMessageReceivedEvent) context.getParams().get("event")).getChannel();
 		Guild guild = channel.getGuild();
 		StorageManager storageManager = getStorageManager(guild);
 
