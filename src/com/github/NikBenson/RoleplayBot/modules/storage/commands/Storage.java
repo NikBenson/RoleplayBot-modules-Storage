@@ -1,15 +1,15 @@
-package com.github.NikBenson.RoleplayBot.modules.storage.commands;
+package com.github.nikbenson.roleplaybot.modules.storage.commands;
 
-import com.github.NikBenson.RoleplayBot.commands.Command;
-import com.github.NikBenson.RoleplayBot.modules.storage.StorageManager;
-import com.github.NikBenson.RoleplayBot.commands.context.GuildMessageContext;
+import com.github.nikbenson.roleplaybot.commands.Command;
+import com.github.nikbenson.roleplaybot.modules.storage.StorageManager;
+import com.github.nikbenson.roleplaybot.commands.context.GuildMessageContext;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import java.util.Map;
 
-import static com.github.NikBenson.RoleplayBot.modules.storage.StorageModule.getStorageManager;
+import static com.github.nikbenson.roleplaybot.modules.storage.StorageModule.getStorageManager;
 
 public class Storage extends Command<GuildMessageContext> {
 	@Override

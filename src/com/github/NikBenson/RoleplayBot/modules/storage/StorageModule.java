@@ -1,9 +1,9 @@
-package com.github.NikBenson.RoleplayBot.modules.storage;
+package com.github.nikbenson.roleplaybot.modules.storage;
 
-import com.github.NikBenson.RoleplayBot.commands.Command;
-import com.github.NikBenson.RoleplayBot.configurations.ConfigurationManager;
-import com.github.NikBenson.RoleplayBot.modules.RoleplayBotModule;
-import com.github.NikBenson.RoleplayBot.modules.storage.commands.Storage;
+import com.github.nikbenson.roleplaybot.commands.Command;
+import com.github.nikbenson.roleplaybot.configurations.ConfigurationManager;
+import com.github.nikbenson.roleplaybot.modules.RoleplayBotModule;
+import com.github.nikbenson.roleplaybot.modules.storage.commands.Storage;
 import net.dv8tion.jda.api.entities.Guild;
 
 import java.io.IOException;
