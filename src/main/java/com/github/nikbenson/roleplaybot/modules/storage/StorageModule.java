@@ -12,6 +12,12 @@ import java.util.Map;
 
 public class StorageModule implements RoleplayBotModule {
 	private static StorageModule instance;
+
+	public static void main(String[] args) {
+		System.out.println("Please add as a module to ROR Bot!");
+		System.exit(-1);
+	}
+
 	private final Map<Guild, StorageManager> managers = new HashMap<>();
 
 	public StorageModule() {
