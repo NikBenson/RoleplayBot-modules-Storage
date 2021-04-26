@@ -6,7 +6,7 @@
 
     <groupId>com.github.nikbenson.roleolaybot.modules</groupId>
     <artifactId>storage</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>StorageModule</name>
     <description>A channel specific storage system.</description>
 
